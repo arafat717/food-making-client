@@ -22,6 +22,7 @@ const Blog = () => {
             </div>
             <div>
                 <h2>3/ Tell us the difference between nodejs and express js?</h2>
+                <p>Express is a minimal and flexible node. js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications. On the other hand, Node. js is detailed as A platform built on Chromes JavaScript runtime for easily building fast, scalable network applications.</p>
             </div>
         </div>
     );
