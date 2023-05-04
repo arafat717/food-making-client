@@ -1,12 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContex } from '../../providers/Authprovider';
 
 const Register = () => {
     const {createuser}=useContext(AuthContex)
+    const [error,setError]=useState('')
+    const [success,setSuccess]=useState('')
+
     const handleRegister = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -18,11 +21,18 @@ const Register = () => {
         .then(result=>{
             const newuser = result.user;
             console.log(newuser)
+            setError('')
+            setSuccess('success to register')
+            event.target.reset();
         })
         .catch(error=>{
             console.log(error)
+            setError(error.message)
+            setSuccess('')
         })
     }
+
+
     return (
         <Container className='mx-auto w-25 mt-5'>
             <h2>Please Register</h2>
@@ -57,11 +67,13 @@ const Register = () => {
                 <Form.Text className="text-muted text-danger">
                     Already have an account? <Link to='/login'>Login</Link>
                 </Form.Text>
-                <Form.Text className="text-muted text-success">
-
+                <br />
+                <Form.Text className="text-success">
+                    {success}
                 </Form.Text>
-                <Form.Text className="text-muted text-success">
-
+                <br />
+                <Form.Text className=" text-danger">
+                    {error}
                 </Form.Text>
             </Form>
         </Container>

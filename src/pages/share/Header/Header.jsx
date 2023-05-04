@@ -16,12 +16,12 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">ITALIAN FOOD</Navbar.Brand>
+                    <Navbar.Brand className='text-black' href="#home">ITALIAN FOOD</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
-                            <Link to='/'>HOME</Link>
-                            <Link to='blog'>BLOG</Link>
+                        <Nav className="mx-auto gap-3">
+                            <Link className='text-decoration-none text-black' to='/'>HOME</Link>
+                            <Link className='text-decoration-none text-black' to='blog'>BLOG</Link>
 
                         </Nav>
                         <Nav>
