@@ -2,10 +2,17 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
     const food = useLoaderData();
     const { description, ingrediants, method, photo, id, name, exprience, nm_recipies, likes } = food;
+
+    const shawtoast = () =>{
+        return () => toast("Save to favorate!");
+    }
+
     return (
         <div className='mt-5'>
             <Card>
@@ -28,7 +35,7 @@ const Details = () => {
                     <Card.Text>
                         Tottal: {nm_recipies}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button onClick={shawtoast} variant="primary">Favorate</Button>
                 </Card.Body>
             </Card>
         </div>
