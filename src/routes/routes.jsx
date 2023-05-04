@@ -14,37 +14,37 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        children:[
+        children: [
             {
                 path: '/',
-                element:<Home></Home>
+                element: <Home></Home>
             },
-            
+
         ]
     },
     {
         path: 'details',
         element: <Detailslayout></Detailslayout>,
-        children:[
+        children: [
             {
-                path:':id',
+                path: ':id',
                 element: <Privateroutes><Details></Details></Privateroutes>,
-                loader:({params})=> fetch(`http://localhost:5000/alldata/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-site-server-arafat717.vercel.app/alldata/${params.id}`)
             }
         ]
     },
     {
-        path:'blog',
-        element:<Bloglayout></Bloglayout>,
-        children:[
+        path: 'blog',
+        element: <Bloglayout></Bloglayout>,
+        children: [
             {
-                path:'/blog',
-                element:<Blog></Blog>
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     },
     {
-        path:'login',
+        path: 'login',
         element: <Login></Login>
     },
     {
@@ -53,9 +53,9 @@ const router = createBrowserRouter([
     },
     {
         path: '*',
-        element:<Error></Error>
+        element: <Error></Error>
     }
-   
-  ])
+
+])
 
 export default router;

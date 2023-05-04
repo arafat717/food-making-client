@@ -7,7 +7,7 @@ import Cart from './Cart';
 const Home = () => {
     const [datas,setData]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/alldata')
+        fetch('https://food-site-server-arafat717.vercel.app/alldata')
         .then(res=>res.json())
         .then(data=>setData(data))
     },[])
