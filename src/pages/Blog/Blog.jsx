@@ -10,6 +10,15 @@ const Blog = () => {
             </div>
             <div>
                 <h2>2/ How to validate React props using PropTypes?</h2>
+                <p>React is a JavaScript library used for creating interactive web frontend applications. It is one of the most popular libraries because of its easy-to-use API.
+
+                    We combine components into an app by passing data from parent components to child components. To do this, we pass data with props. Props are like HTML attributes, but they can contain dynamic data.
+
+                    A parent component passes props down to child components. And child components receive them. We can pass any data as props. Therefore, we need a way to validate their data type so that the child component gets what they expect.
+
+                    In this article, we will look at how to validate prop data types with the prop-types library.
+
+                    Installing the prop-t</p>
             </div>
         </div>
     );
